@@ -1,0 +1,26 @@
+
+
+@mixin myPrecious ($size, $color) {
+  border-radius: 50%;
+  background-color: transparent;
+  position:absolute;
+
+  width : $size;
+  height: $size;
+
+  border-width: $size/10;
+  box-shadow : 2px 2px 5px lighten($color,10%);
+  border: $size/10 solid $color;
+
+  left:500px + $size * $size /30px;
+  left:500px + $size * $size /30px;
+  top:500px - $size/2;
+
+}
+
+
+@for $i from 1 through 6 {
+  .ring:nth-child(#{$i}) {
+    @include myPrecious($i * 10px, red);
+  }
+}
